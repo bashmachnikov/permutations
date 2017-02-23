@@ -15,33 +15,31 @@ typedef vector<perm_t> perm_collection_t;
 void permute(int n, const perm_t& in, perm_collection_t& out){
 	perm_t::const_iterator it;
 	perm_t::const_iterator it_end;
-	int m = in.size()+1;
-	int i;
 
+	int i;
+	int perm_sz = in.size();
+	int m = perm_sz+1;
 	perm_t p;
 	p.resize(m);
+
+	// add to front
 	p[0] = n;
 	copy( in.begin(), in.end(), p.begin()+1 );
 	out.push_back(p);
 
-	p.clear();
-	p.resize(m);
-
-	p[m-1] = n;
+	// add to end
+	p[perm_sz] = n;
 	copy( in.begin(), in.end(), p.begin() );
 	out.push_back(p);
 
-	for( i=1; i<m-1; ++i){
-		p.clear();
-		p.resize(m);
+	it = in.begin();
+	it_end = in.end();
 
-		p[i] = n;
-
-		it = in.begin();
+	// add in every position
+	for( i=1; i<perm_sz; ++i){
 		copy( it, it+i, p.begin() );
-
-		it = in.begin();
-		copy( it+i, in.end(), p.begin()+i+1 );
+		p[i] = n;
+		copy( it+i, it_end, p.begin()+i+1 );
 
 		out.push_back(p);
 	}
