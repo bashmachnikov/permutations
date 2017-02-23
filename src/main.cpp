@@ -1,5 +1,3 @@
-//#include "config.h"
-
 #include <vector>
 #include <iostream>
 #include <iterator>
@@ -102,7 +100,7 @@ void permute_n(int n, perm_collection_t& out){
 }
 
 
-// prints collection of perutations
+// prints collection of permutations
 void print_collection(const perm_collection_t& a){
 	perm_collection_t::const_iterator it = a.begin();
 	perm_collection_t::const_iterator it_end = a.end();
