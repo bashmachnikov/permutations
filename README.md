@@ -1,5 +1,11 @@
 # permutations
 
+# there are 2 versions of the same action.
+# 	v1 works recursively and produces non sorted result using additional memory 
+#	v2 just use of the std::next_permutation - beutiful
+# application will run both versions and compare the number of solutions 
+
+
 vector of permutations
 # To download:
 ```sh
@@ -16,19 +22,10 @@ make
 
 #to Run:
 ```sh
-./permutations 1
-```
-
-Example:
-```
-[~/src/permutations/build]$ ./permutations 2
-result
-0: 2,1,0,
-1: 1,0,2,
-2: 1,2,0,
-3: 2,0,1,
-4: 0,1,2,
-5: 0,2,1,
+./permutations 3
+~/src/permutations/build$ ./permutations 4
+version 1 recursive Non-sorted returned 24 results
+version 2 using std::next_permutation 24 results
 ```
 
 ! No input checks are done !
