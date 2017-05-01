@@ -2,7 +2,7 @@
 
 # there are 2 versions of the same action.
 # 	v1 works recursively and produces non sorted result using additional memory 
-#	v2 just use of the std::next_permutation - beutiful
+#	v2 just use of the std::next_permutation - beautiful
 # application will run both versions and compare the number of solutions 
 
 
